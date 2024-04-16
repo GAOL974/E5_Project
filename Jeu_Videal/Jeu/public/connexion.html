@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/page_acc.css">
+  <title>Star Wars Game</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Bienvenue sur mon jeu <br> Space In-Vader </h1>
+    <form id="formInscription" action="/connexion" method="POST">
+      <div class="user-box">
+        <input type="text" id="pseudoInput" name="pseudo" placeholder="Pseudo" required><br>
+      </div>
+      <div class="user-box">
+        <input type="password" id="mdpInput" name="password" placeholder="Mot de passe (+8 caractères)" required>
+        <input type="checkbox" id="showPasswordCheckbox">
+        <label for="showPasswordCheckbox">Afficher le mot de passe</label><br>
+      </div>
+      <button type="submit">Connexion</button>
+    </form>
+  </div>
+
+  <script>
+    
+    // Affiche le mdp ou le cache
+    document.getElementById("showPasswordCheckbox").addEventListener("change", function () {
+      var passwordInput = document.getElementById("mdpInput");
+      if (this.checked) {
+        passwordInput.type = "text";
+      } else {
+        passwordInput.type = "password";
+      }
+    });
+
+    // Mdp a 8 caractere minimum
+    document.getElementById("formInscription").addEventListener("submit", function (event) {
+      const mdpInput = document.getElementById("mdpInput");
+      if (mdpInput.value.length < 8) {
+        alert("Le mot de passe doit comporter au moins 8 caractères.");
+        event.preventDefault();
+        return false;
+      }
+    });
+  </script>
+</body>
+<script src="./script.js"></script>
+
+</html>

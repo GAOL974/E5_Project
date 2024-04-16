@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../img/5888d7b2696e39f2be7b972622348632_w200.gif');
+    background-size: auto;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .game-title {
+    font-size: 92px;
+    color: white;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Ombre pour plus de contraste */
+    animation: blink 1s infinite alternate; /* Animation de clignotement */
+  }
+
+  @keyframes blink {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0.5;
+    }
+  }
+
+  .btn {
+    padding: 10px 20px;
+    background-color: #FFD700;
+    border: none;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    text-decoration: none;
+  }
+
+  .btn:hover {
+    background-color: #FFA500;
+  }

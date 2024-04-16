@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/page_acc.css">
+    <title>Star Wars Game</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Bienvenue sur mon jeu <br> Space In-Vader </h1>
+        <form id="formInscription" action="/inscription" method="POST">
+            <div class="user-box">
+                <input type="text" id="username" name="pseudo" placeholder="Pseudo" required><br>
+            </div>
+            <div class="user-box">
+                <input type="password" id="password" name="password" placeholder="Mot de passe (+8 caractères)"
+                    required>
+                <input type="checkbox" id="showPasswordCheckbox">
+                <label for="showPasswordCheckbox">Afficher le mot de passe</label><br>
+            </div>
+            <div class="user-box">
+                <input type="password" id="confirmPassword" name="confirmPassword"
+                    placeholder="Confirmer le mot de passe" required><br>
+            </div>
+            <button type="submit">
+                Inscription
+            </button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("formInscription").addEventListener("submit", function (event) {
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password !== confirmPassword) {
+                alert("Les mots de passe ne correspondent pas.");
+                event.preventDefault();
+                return false;
+            }
+        });
+
+        document.getElementById("showPasswordCheckbox").addEventListener("change", function () {
+            var passwordInput = document.getElementById("password");
+            if (this.checked) {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        });
+    </script>
+</body>
+
+</html>
